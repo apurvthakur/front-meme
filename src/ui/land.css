@@ -1,0 +1,69 @@
+#fontt{
+    font-family: 'Amatic SC', cursive;
+    font-size: 55px;
+    
+}
+
+.grow{
+    font-family: 'Tangerine', cursive;
+    font-size: 200%;
+    color: #eeeeee ;
+}
+
+#fontts{
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    margin-top: -1%;
+    color: #eeeeee;
+}
+
+.inside{
+    /* background-color: #060331 ; */
+    margin: 0;
+}
+.bg{
+    /* background-color: #0A0542; */
+    min-height: 91.5vh;
+}
+ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a{
+    text-decoration: none;
+}
+li{
+    display: inline;
+    float: right;
+    padding: 8px;
+    color:white;
+    margin-right: 2%;
+    text-decoration: none;
+}
+
+h1{
+    margin: 0;
+}
+
+h2{
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+}
+
+h4{
+    margin: 0;
+}
+
+h5{
+    margin: 0;
+}
+
+h6{
+    margin: 0;
+}

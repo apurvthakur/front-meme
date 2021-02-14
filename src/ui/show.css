@@ -1,0 +1,51 @@
+.main{
+    min-height: 100vh;
+    margin-top: -4%;
+    border: 1px solid #e0e0e0
+}
+
+h6{
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+
+.post{
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px #eeeeee;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    min-height: 350px;
+    max-height: 350px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+h1 h2 h3 h4 h5 h6{
+    margin: 0;
+}
+
+.mainshow{
+    
+    min-height: 100vh;
+    overflow: hidden;
+}
+.custom_modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 55%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    z-index: 1;
+    will-change: top, opacity;
+}
+.close_icon{
+    float: right;
+    cursor: pointer;
+}

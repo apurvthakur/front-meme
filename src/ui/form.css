@@ -1,0 +1,51 @@
+
+.forms{
+    margin-top: 2%;
+    min-height: 55vh;
+}
+
+form input{
+    color: black;
+}
+
+button{
+    color: white;
+    padding: 1%;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1%;
+}
+
+form{
+    margin-top: 2%;
+}
+.mainform{
+    min-height: 100vh;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+}
+
+
+h1{
+    margin: 0;
+}
+
+h2{
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+}
+
+h4{
+    margin: 0;
+}
+
+h5{
+    margin: 0;
+}
+
+h6{
+    margin: 0;
+}
