@@ -36,7 +36,7 @@ export default class Form extends Component{
         });
         
         console.log(data);
-        axios.post("http://localhost:5000/memes", data, {headers:headers})
+        axios.post("https://memestream-app-apoorva.herokuapp.com/memes", data, {headers:headers})
         .then(res => {
             console.log(res);
             this.setState({

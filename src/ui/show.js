@@ -55,7 +55,7 @@ export default class show extends Component{
         dataUpdate = qs.stringify(dataUpdate);
         
         console.log(e);
-        const requrl = "http://localhost:5000/memes/"+this.state.id;
+        const requrl = "https://memestream-app-apoorva.herokuapp.com/memes/"+this.state.id;
         console.log(requrl);
         axios.patch(requrl, dataUpdate, {headers:headers})
         .then(res => {
@@ -72,7 +72,7 @@ export default class show extends Component{
     }
     
     componentDidMount(){
-        axios.get("http://localhost:5000/memes")
+        axios.get("https://memestream-app-apoorva.herokuapp.com/memes")
             .then(res => {
                 console.log(res.data);
                 this.setState({
