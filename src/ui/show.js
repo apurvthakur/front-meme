@@ -64,7 +64,8 @@ export default class show extends Component{
         axios.patch(requrl, dataUpdate, {headers:headers})
         .then(res => {
             console.log(res); 
-            this.props.history.push("/memes");
+            this.closeModal();
+            this.componentDidMount();
         })
         .catch((err) => {
             console.log("ERROR: ====", err);
