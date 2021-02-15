@@ -5,6 +5,8 @@ import './show.css';
 import qs from 'qs';
 import Navbar from './navbar';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+
 export default class show extends Component{
 
     constructor(props){
@@ -15,7 +17,8 @@ export default class show extends Component{
             caption: '',
             url: '',
             display: 'none',
-            id: ''
+            id: '',
+            upid:''
         }
     };
 
@@ -26,7 +29,8 @@ export default class show extends Component{
         this.setState({
             display: 'block',
             id: id
-        })
+        });
+        console.log(id);
     }
 
     closeModal = () => {
@@ -55,11 +59,12 @@ export default class show extends Component{
         dataUpdate = qs.stringify(dataUpdate);
         
         console.log(e);
-        const requrl = "https://meme-app-stream.herokuapp.com/memes/"+this.state.id;
+        const requrl = "https://meme-app-stream.herokuapp.com/memes/"+this.state.data[this.state.id].id;
         console.log(requrl);
         axios.patch(requrl, dataUpdate, {headers:headers})
         .then(res => {
-            console.log(res);    
+            console.log(res); 
+            window.location.reload();
         })
         .catch((err) => {
             console.log("ERROR: ====", err);
@@ -85,13 +90,13 @@ export default class show extends Component{
         
     render(){
     const cardrender = (
-    this.state.data.map(pos => {
+    this.state.data.map((pos,index) => {
         return(
-            <div key={pos.id} style={{width: '30%', minWidth:'fit-content', display:'inline-block'}}>
+            <div key={index} style={{width: '30%', minWidth:'fit-content', display:'inline-block'}}>
                 <br></br>
                 <div class="post">
                     <h6 style={{borderBottom:'1px solid #eeeeee', paddingBottom:'1.5%'}}><b>{pos.name}</b>
-                    <a onClick= {() => {this.handleclick(pos.id)}}><span style={{fontSize:'23px', textDecoration:'none', color:'black', cursor:'pointer'}} class="material-icons right grey-text">more_vert</span></a></h6>
+                    <a onClick= {() => {this.handleclick(index)}}><span style={{fontSize:'23px', textDecoration:'none', color:'black', cursor:'pointer'}} class="material-icons right grey-text">more_vert</span></a></h6>
                     <p class="center" style={{color:'#bdbdbd', fontSize:'13px'}}>Last updated on: {pos.updatedAt.slice(0,10)} at {pos.updatedAt.slice(11,19)}</p>
                     <div class="row ">
                         <div class="col s12 m12 l6" style={{width:"100%", marginLeft:"auto", marginRight:"auto", overflow:"hidden"}}>
@@ -117,7 +122,9 @@ export default class show extends Component{
         <span className='close_icon' onClick={() => {this.closeModal()}} style={{marginRight:'5px'}}>Close</span>
             <div class="modal-content" style={{margin:'10px'}}>
                 <h4>Update this Post</h4>
-                <p>Meme Owner: {this.state.id!== '' ?this.state.data[(this.state.id)-1].name:null}</p>
+                {console.log(this.state.data.id)}
+                {console.log(this.state.data)}
+                <p>Meme Owner: {this.state.id!== '' ?this.state.data[(this.state.id)].name:null}</p>
                 
                 <form onSubmit= {this.updateFunction}>
                     <div class="row">
