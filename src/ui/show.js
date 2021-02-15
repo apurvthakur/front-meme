@@ -65,6 +65,10 @@ export default class show extends Component{
         .then(res => {
             console.log(res); 
             this.closeModal();
+            this.setState({
+                caption:'',
+                url:''
+            });
             this.componentDidMount();
         })
         .catch((err) => {
@@ -130,13 +134,13 @@ export default class show extends Component{
                 <form onSubmit= {this.updateFunction}>
                     <div class="row">
                         <div class="input-field col s12">
-                        <input id="caption" type="text" name="caption" class="validate"  onChange={this.changeHandler}/>
+                        <input id="caption" type="text" name="caption" class="validate" value={this.state.caption}  onChange={this.changeHandler}/>
                         <label for="caption">Caption your submission</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12"> 
-                            <input id="memeurl" type="text" name="url" class="validate"   onChange={this.changeHandler}/>
+                            <input id="memeurl" type="text" name="url" class="validate" value={this.state.url}   onChange={this.changeHandler}/>
                         <label for="memeurl">Meme URL</label>
                         </div>
                     </div>

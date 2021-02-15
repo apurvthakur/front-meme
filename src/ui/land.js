@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './land.css';
 import Navbar from './navbar';
@@ -15,9 +16,10 @@ export default function land() {
                 <h5 class="white-text" id="fontts"><br></br>Meme sharing for the memers</h5><br></br>
                 <h6 class=" grow">Grow your network, meet creative people and unleash your creativity!</h6>
                 </div>
-                <div class="center">
+                <div class="center row">
+                    <div class= "center">
                 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_yriifcob.json"  background="transparent"  speed="1"  style={{width: '1515px', height: '330px'}}  loop  autoplay></lottie-player>
-                </div><br></br><br></br>
+                </div></div><br></br><br></br>
                 <Link to="/memes"><a class="waves-effect orange waves-light btn" style={{textTransform:"lowercase", marginTop:""}}><b>Get my memes!</b></a></Link>
                 
             </div>
