@@ -4,13 +4,13 @@ import axios from 'axios';
 import Navbar from './navbar';
 import qs from 'qs';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
 
 
 export default class Form extends Component{
 
     constructor(props){
         super(props)
-        
         this.state = {
             name: '',
             caption: '',
@@ -45,6 +45,7 @@ export default class Form extends Component{
                 url: ''
               });
 
+              this.props.history.push("/memes");
             
         })
         .catch((err) => {
